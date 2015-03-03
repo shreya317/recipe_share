@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
-  get 'login/new'
 
-  get 'welcome/index'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-  get 'new_account' => 'users#new'
-  post 'new_account' => 'users#create'
+  delete 'logout' => 'sessions#destroy'
+
+  get 'create_account' => 'users#new'
+  post 'create_account' => 'users#create'
+
+  get 'add_recipe' => 'recipes#new'
+  post 'add_recipe' => 'recipes#create'
+  get 'recipes_index' => 'recipes#index'
+  get 'recipes/:id' => 'recipes#show'
 
   # resources :recipes
+  # get 'welcome/index'
   # resources :users
 
   # The priority is based upon order of creation: first created -> highest priority.
