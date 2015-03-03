@@ -1,0 +1,17 @@
+<!-- all recipes by one chef -->
+<div class="container">
+<h1> Welcome <%=current_user.first_name%> </h1>
+<h1>Here are all of your recipes:</h1>
+
+<ul id="recipe_list">
+  <% @recipes.each do |r| %>
+  <li><%= r.title %></li>
+  <li><%= r.date_posted %></li>
+  <li><%= r.user.first_name + " " + r.user.last_name %></li>
+  <li><%= r.description %></li><br>
+  <%end%>
+</ul>
+
+<p><%=link_to "Add recipe", add_recipe_path %></p>
+
+</div>

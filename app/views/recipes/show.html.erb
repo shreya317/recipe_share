@@ -1,0 +1,18 @@
+<!-- single recipe by chef -->
+
+<div class="container">
+
+<ul id="single_recipe">
+  <h1>Single recipe view:</h1>
+    <li><h1>Title: <%=@recipe.title%></h1></li>
+    <li>Chef: <%=@recipe.user.first_name + " " + @recipe.user.last_name %></li>
+    <li>Date: <%=@recipe.date_posted%></li>
+    <li>Description: <%=@recipe.description%></li>
+    <li>Ingredients: <%=@recipe.ingredients%></li>
+    <li>Directions: <%=@recipe.directions%></li>
+</ul>
+
+<p><%=link_to "Add recipe", add_recipe_path %></p>
+
+
+</div>

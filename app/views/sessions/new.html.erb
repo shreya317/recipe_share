@@ -3,15 +3,13 @@
 	<h1>Recipe Share</h1>
 
 	<p>Login</p>
+	<ul id="login_form">
+		<%= form_for :session, url: login_path do |f| %>
+		  <li><%=f.text_field :email, placeholder: "example@gmail.com"%></li>
+		  <li><%=f.password_field :password, placeholder: "password"%></li>
+		  <li><%=f.submit "Login"%></li>
+	  <%end%>
+	</ul>
 
-	<form action="/login" method="POST">
-		<ul>
-			<li><input id="user_email" type="text" name="user[email]" placeholder="Email"/></li>
-			<li><input id="user_password" type="password" name="user[password]" placeholder="Password"/></li>
-			<li><input type="submit" value="Login"></li>
-		</ul>
-	</form>
-
-		<p><a href="/users/">Create a new account</a></p>
-
+	<%=link_to "Create an account", create_account_path%>
 </div>

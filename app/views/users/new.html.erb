@@ -4,15 +4,15 @@
 
 	<p>Create an account</p>
 
-	<form action="/login" method="POST">
-		<ul>
-			<li><input id="user_firstname" type="text" name="user[first_name]" placeholder="First name"/></li>
-			<li><input id="user_lastname" type="text" name="user[last_name]" placeholder="Last name"/></li>
-			<li><input id="user_email" type="text" name="user[email]" placeholder="Email"/></li>
-			<li><input id="user_password" type="password" name="user[password]" placeholder="Password"/></li>
-			<li><input type="submit" value="Create Account"></li>
-		</ul>
-	</form>
+	<ul id="create_account_form">
+		<%= form_for @user, url: create_account_path do |f| %>
+		  <li><%=f.text_field :first_name, placeholder: "First name"%></li>
+		  <li><%=f.text_field :last_name, placeholder: "Last name"%></li>
+		  <li><%=f.text_field :email, placeholder: "example@gmail.com"%></li>
+		  <li><%=f.password_field :password, placeholder: "password"%></li>
+		  <li><%=f.submit "Create account", data: {confirm: "Thank you for creating an account. Click ok to log in."}%></li>
+	  <%end%>
+	</ul>
 
 
 </div>
