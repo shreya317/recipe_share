@@ -1,16 +1,14 @@
+<!-- all my recipes -->
 <div class="container">
-<h1> Welcome <%=current_user.first_name%> </h1>
-<h1>Here are all of your recipes:</h1>
+  <h1><%=current_user.first_name%>, here are all of your recipes:</h1>
 
-<ul id="recipe_list">
-  <% @recipes.each do |r| %>
-  <li><%= link_to r.title, user_recipe_path(r.user_id, r.id)  %></li>
-  <li><%= r.date_posted %></li>
-  <li><%= r.user.first_name + " " + r.user.last_name %></li>
-  <li><%= r.description %></li><br>
-  <%end%>
-</ul>
+  <ul id="recipe_list">
+    <% if @recipes.each do |r| %>
+      <li><%= link_to r.title, user_recipe_path(r.user_id, r.id) %></li>
+      <li><%= r.date_posted %></li>
+      <li><%= r.description %></li><br>
+      <%end%>
+    <%end%>
+  </ul>
 
-<p><%=link_to "Add recipe", new_user_recipe_path(@current_user) %></p>
-<p><%=link_to "View recent recipes", recipes_path %></p>
 </div>

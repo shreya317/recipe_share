@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>RecipeShare</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>RecipeShare</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-<%= yield %>
-<p><%=link_to "Log Out", logout_path , method: :delete%></p>
-</body>
+  <%= yield %>
+
+  <nav class="nav-options">
+    <ul>
+      <% if session[:user_id] %>
+      <li><%=link_to "Add recipe", new_user_recipe_path(session) %></li>
+      <li><%=link_to "View my recipes", user_my_recipes_path(session) %></li>
+      <li><%=link_to "View recent recipes", recipes_path %></li>
+      <li><%=link_to "Log Out", logout_path , method: :delete%></li>
+      <%end%>
+    </ul>
+  </nav>
+
+  </body>
 </html>

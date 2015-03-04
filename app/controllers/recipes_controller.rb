@@ -3,12 +3,16 @@ class RecipesController < ApplicationController
 
 	def index
     @recipes = Recipe.all
-    @current_user = current_user.id
   end
 
   def my_recipes
     @recipes = Recipe.where(user_id: current_user.id)
     @current_user = current_user.id
+  end
+
+  def chef_recipes
+    @recipes = Recipe.where(user_id: params[:user_id])
+    @current_user = current_user
   end
 
 
@@ -21,7 +25,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new( title: params[:recipe][:title],
                           user_id: current_user.id,
                           date_posted: Date.today,
-                          description: params[:recipe][:description],
+                          description: @description,
                           ingredients: params[:recipe][:ingredients],
                           directions: params[:recipe][:directions] )
 
@@ -40,13 +44,13 @@ class RecipesController < ApplicationController
   def destroy
     @recipe = Recipe.find(params[:id])
     @recipe.destroy
-    redirect_to recipes_path
+    redirect_to user_my_recipes_path(current_user.id)
   end
 
   def update
     @recipe = Recipe.find(params[:id])
     @recipe.update(update_params)
-    redirect_to redirect_to recipes_path(@recipe.id)
+    redirect_to user_recipe_path(@recipe.user_id, @recipe.id)
   end
 
   private

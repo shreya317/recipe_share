@@ -2,28 +2,23 @@
 
 <div class="container">
 
-<ul id="single_recipe">
-  <h1>Single recipe view:</h1>
-    <li><h1>Title: <%=@recipe.title%></h1></li>
-    <li>Chef: <%=@recipe.user.first_name + " " + @recipe.user.last_name %></li>
-    <li>Date: <%=@recipe.date_posted%></li>
-    <li>Description: <%=@recipe.description%></li>
-    <li>Ingredients: <%=@recipe.ingredients%></li>
-    <li>Directions: <%=@recipe.directions%></li>
+    <ul id="single_recipe">
+      <h1>Single recipe view:</h1>
+        <li><h1><%=@recipe.title%></h1></li>
+        <li>Chef: <%= link_to @recipe.user.first_name + " " + @recipe.user.last_name, user_chef_recipes_path(@recipe.user_id) %></li>
+        <li>Date: <%=@recipe.date_posted%></li>
+        <li>Description: <%=@recipe.description%></li>
+        <li>Ingredients: <%=@recipe.ingredients%></li>
+        <li>Directions: <%=@recipe.directions%></li>
+    </ul>
+
+<ul>
+    <% if session[:user_id] == @recipe.user_id%>
+    	<li><%= link_to "Delete", user_recipe_path(@recipe.user_id,@recipe.id), method: :delete%></li>
+    	<li><%= link_to "Edit" %></li>
+        <!-- Show edit form on "Edit" click -->
+    	<%=render "form"%>
+    <%end%>
 </ul>
-
-
-<% if session[:user_id] == @recipe.user_id%>
-	<p><%= link_to "Delete", user_recipe_path(@recipe.user_id,@recipe.id), method: :delete%><p>
-	<p><%= link_to "Edit", user_recipe_path(@recipe.user_id,@recipe.id), method: :put %></p>
-
-	<p><%=render "form"%></p>
-<%end%>
-
-
-<p><%=link_to "Add recipe", new_user_recipe_path() %></p>
-<p><%=link_to "View my recipes", user_my_recipes_path(@current_user) %></p>
-<p><%=link_to "View recent recipes", recipes_path %></p>
-
 
 </div>
