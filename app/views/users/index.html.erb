@@ -1,7 +1,6 @@
-<!-- all recipes by one chef -->
 <div class="container">
 <h1> Welcome <%=current_user.first_name%> </h1>
-<h1>Here are recently posted recipes:</h1>
+<h1>Here are all of your recipes:</h1>
 
 <ul id="recipe_list">
   <% @recipes.each do |r| %>
@@ -13,8 +12,5 @@
 </ul>
 
 <p><%=link_to "Add recipe", new_recipe_path %></p>
-
-<p><%=link_to "View my recipes", users_path %></p>
-
-
+<p><%=link_to "View recent recipes", recipes_path %></p>
 </div>

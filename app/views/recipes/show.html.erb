@@ -12,7 +12,17 @@
     <li>Directions: <%=@recipe.directions%></li>
 </ul>
 
-<p><%=link_to "Add recipe", add_recipe_path %></p>
+
+<% if session[:user_id] == @recipe.user_id%>
+	<p><%= link_to "Delete", recipe_path(@recipe.id), method: :delete%><p>
+	<p><%= link_to "Edit", recipe_path(@recipe.id), method: :put %></p>
+
+	<p><%=render "form"%></p>
+<%end%>
+
+
+<p><%=link_to "Add recipe", new_recipe_path %></p>
+<p><%=link_to "View recent recipes", recipes_path %></p>
 
 
 </div>

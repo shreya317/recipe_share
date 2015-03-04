@@ -4,17 +4,10 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  get 'create_account' => 'users#new'
-  post 'create_account' => 'users#create'
+  resources :recipes
+  resources :users
 
-  get 'add_recipe' => 'recipes#new'
-  post 'add_recipe' => 'recipes#create'
-  get 'recipes_index' => 'recipes#index'
-  get 'recipes/:id' => 'recipes#show'
-
-  # resources :recipes
-  # get 'welcome/index'
-  # resources :users
+  get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

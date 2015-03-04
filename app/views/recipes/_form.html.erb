@@ -1,0 +1,10 @@
+<ul id="recipe_form">
+    <%= form_for @recipe do |f|%>
+      <li><%=f.text_field :title, placeholder: "Title"%></li>
+      <li><%=f.text_area :description, placeholder: "Description (optional)"%></li>
+      <li><%=f.text_area :ingredients, placeholder: "List of ingredients"%></li>
+      <li><%=f.text_area :directions, placeholder: "Directions"%></li>
+      <li><%=f.submit "Add recipe"%></li>
+
+      <%end%>
+  </ul>

@@ -5,7 +5,7 @@
 	<p>Create an account</p>
 
 	<ul id="create_account_form">
-		<%= form_for @user, url: create_account_path do |f| %>
+		<%= form_for @user,  url: { action: "create" } do |f| %>
 		  <li><%=f.text_field :first_name, placeholder: "First name"%></li>
 		  <li><%=f.text_field :last_name, placeholder: "Last name"%></li>
 		  <li><%=f.text_field :email, placeholder: "example@gmail.com"%></li>

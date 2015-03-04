@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-	def new
+	 
+  def index
+    @recipes = Recipe.where(user_id: current_user.id)
+  end
+
+  def new
 		@user = User.new
 	end
 
