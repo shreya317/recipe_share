@@ -4,8 +4,13 @@ Rails.application.routes.draw do
   post 'login' => 'sessions#create'
   delete 'logout' => 'sessions#destroy'
 
-  resources :recipes
-  resources :users
+  resources :recipes, only: [:index]
+
+  resources :users, except: [:index, :edit] do
+    get 'my_recipes' => 'recipes#my_recipes'
+    resources :recipes, except: [:index, :edit]
+  end
+
 
   get 'welcome/index'
 
