@@ -1,9 +1,9 @@
 <!-- single recipe by chef -->
 
 <div class="container">
+      <h1 class="title">Single recipe view:</h1>
 
     <ul id="single_recipe">
-      <h1>Single recipe view:</h1>
         <li><h1><%=@recipe.title%></h1></li>
         <li>Chef: <%= link_to @recipe.user.first_name + " " + @recipe.user.last_name, user_chef_recipes_path(@recipe.user_id) %></li>
         <li>Date: <%=@recipe.date_posted%></li>
@@ -15,9 +15,11 @@
 <ul>
     <% if session[:user_id] == @recipe.user_id%>
     	<li><%= link_to "Delete", user_recipe_path(@recipe.user_id,@recipe.id), method: :delete%></li>
-    	<li><%= link_to "Edit" %></li>
+    	<li id="edit"><%= link_to "Edit" %></li>
         <!-- Show edit form on "Edit" click -->
-    	<%=render "form"%>
+    	<div class="edit-recipe-form">
+            <%=render "form"%>
+        </div>
     <%end%>
 </ul>
 

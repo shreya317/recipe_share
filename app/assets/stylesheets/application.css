@@ -14,9 +14,10 @@
  *= require_self
  */
 
+/*Nav Bar */
+
  .nav-options li {
     display: inline;
-    /*margin: 2px;*/
     padding: 10px;
     border: 1px solid black;
  }
@@ -31,3 +32,33 @@
     padding: 0;
 }
 
+
+/*Temporary container */
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+input[type="text"], input[type="password"] {
+  margin-bottom: 2%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+p {
+  text-align: center;
+  padding-left: 40px;
+}

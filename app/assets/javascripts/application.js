@@ -11,6 +11,25 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function() {
+
+// change recipe submit button to 'Update'
+
+  $(".edit-recipe-form input[type='submit']").val('Update')
+
+// show edit recipe form on click
+
+  $( "#edit a" ).on( "click", function(event) {
+  event.preventDefault();
+  var edit_recipe_form = $('.edit-recipe-form')
+  edit_recipe_form.show();
+  });
+
+
+});
+
