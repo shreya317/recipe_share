@@ -1,9 +1,9 @@
 <ul id="recipe_form">
     <%= form_for ([@user, @recipe]) do |f|%>
-      <li><%=f.text_field :title, placeholder: "Recipe name"%></li>
-      <li><%=f.text_area :description, placeholder: "Description (optional)"%></li>
-      <li><%=f.text_area :ingredients, placeholder: "List of ingredients separated by a comma"%></li>
-      <li><%=f.text_area :directions, placeholder: "Directions separated by comma"%></li>
+      <li><%=f.text_field :title, placeholder: "Recipe name", size: 70%></li>
+      <li><%=f.text_area :description, placeholder: "Description (optional)", size: "55x5"%></li>
+      <li><%=f.text_area :ingredients, placeholder: "List of ingredients separated by a comma" , size: "55x10"%></li>
+      <li><%=f.text_area :directions, placeholder: "Directions separated by comma", size: "55x20"%></li>
       <li><%=f.submit "Add recipe"%></li>
 
       <%end%>

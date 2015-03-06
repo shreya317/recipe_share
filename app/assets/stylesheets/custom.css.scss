@@ -1,0 +1,68 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Universal */
+
+nav
+
+
+/* Welcome page */
+
+#welcome-options {
+    position:fixed;
+    right: 20px;
+}
+
+#welcome-options li {
+    display: inline;
+    padding: 10px;
+}
+
+/*Nav Bar */
+
+ .nav-options li {
+    display: inline;
+    padding: 10px;
+    border: 1px solid black;
+ }
+
+ .nav-options {
+  text-align: center;
+ }
+
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*Temporary container */
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+input[type="text"], input[type="password"] {
+  margin-bottom: 2%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+p {
+  text-align: center;
+  padding-left: 40px;
+}
