@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to recipes_path
     else
-      render :new
+      redirect_to welcome_index_path
     end
   end
 
   def destroy
     session.clear
-    redirect_to login_path
+    redirect_to welcome_index_path
   end
 
 

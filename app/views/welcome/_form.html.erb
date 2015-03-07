@@ -1,0 +1,9 @@
+<ul>
+	<%= form_for :session, url: login_path do |f| %>
+	<li><%=f.text_field :email, placeholder: "example@gmail.com"%></li>
+  <li><%=f.password_field :password, placeholder: "password"%></li>
+  <li><%=f.submit "Log In"%></li>
+	<%end%>
+
+	<%= link_to "Log In with Google"%>
+</ul>

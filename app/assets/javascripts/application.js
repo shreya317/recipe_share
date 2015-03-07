@@ -18,6 +18,12 @@
 
 $(document).ready(function() {
 
+	$( "#login a" ).on( "click", function(event) {
+	  event.preventDefault();
+	  var login_form = $('.login_form')
+	  login_form.show();
+	  });
+
 // change recipe submit button to 'Update'
 
   $(".edit-recipe-form input[type='submit']").val('Update')
@@ -29,6 +35,7 @@ $(document).ready(function() {
   var edit_recipe_form = $('.edit-recipe-form')
   edit_recipe_form.show();
   });
+
 
 
 });

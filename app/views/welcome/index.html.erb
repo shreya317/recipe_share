@@ -1,8 +1,13 @@
 <nav class="welcome-nav">
 
   <ul>
-      <li><%=link_to "Log In", login_path%></li>
-      <li><%=link_to "Sign Up", new_user_path%></li>
+  		
+  		<li id="login"><%= link_to "Login", login_path %></li>
+      <!-- Show log in form on click -->
+    	<div class="login_form">
+      	<%=render "form"%>
+			</div>
+			<li><%=link_to "Sign Up", new_user_path%></li>
   </ul>
 
 </nav>

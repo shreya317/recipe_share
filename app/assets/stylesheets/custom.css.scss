@@ -5,6 +5,21 @@
 
 /* Universal */
 
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 @media (min-width: 979px) {
   body {
   }
@@ -24,12 +39,6 @@
   text-align: center;
  }
 
- ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
 
 /*Temporary container */
 .container {
@@ -40,16 +49,8 @@
   text-align: center;
 }
 
-li {
-  list-style: none;
-}
-
 input[type="text"], input[type="password"] {
   margin-bottom: 2%;
-}
-
-a {
-  text-decoration: none;
 }
 
 a:hover {
