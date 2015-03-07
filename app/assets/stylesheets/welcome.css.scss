@@ -1,0 +1,72 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url(http://fonts.googleapis.com/css?family=Dancing+Script:700);
+
+
+// Welcome nav bar
+
+.welcome-nav {
+  border: 1px solid #502401;
+  background-color: #502401;
+  height: 30px;
+}
+
+.welcome-nav ul {
+  text-align: right;
+  padding: 5px 10px;
+}
+
+.welcome-nav li {
+  display: inline;
+}
+
+.welcome-nav a {
+  color: white;
+}
+
+.welcome-nav a:hover {
+  color: #cef6cf;
+}
+
+
+// Welcome title
+
+.welcome-header {
+  background: asset_url('mintcupcake.JPG') no-repeat center;
+ -webkit-background-size: cover; /* For WebKit*/
+  -moz-background-size: cover;    /* Mozilla*/
+  -o-background-size: cover;      /* Opera*/
+  background-size: cover;         /* Generic*/
+  background-size: 100%;
+  height: 500px;
+}
+
+.transbox {
+  background: rgb(80, 36, 1); /* Fallback for older browsers without RGBA-support */
+  background: rgba(80, 36, 1, 0.4);
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  padding: 1%;
+}
+
+.welcome-header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 10em;
+  margin-top: 0%;
+  color: white;
+  text-align: center;
+}
+
+.welcome-header h3 {
+  color: white;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3em;
+  // -webkit-text-stroke: 2px #502401;
+}
